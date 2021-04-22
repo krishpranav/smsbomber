@@ -34,7 +34,7 @@ def sendsms(number):
 
 
 def start():
-    print(b"\n SMS BOMBER")
+    print("\n SMS BOMBER")
     print("""
     1) Single PHONE Number   2) Combo
 """)
