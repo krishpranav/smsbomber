@@ -44,7 +44,7 @@ def start():
         print("\n\nPlease Enter Number:")
         print("Example: +989931340980\n")
         
-        cellphone = input("SMSbomber/Singel/# ")
+        cellphone = input("$ ")
         print("")
         while True:
             try:
@@ -53,11 +53,11 @@ def start():
                 if start_sms == True:
                     print("SMS Send To: "+cellphone)
                 else:
-                    print("PHONE Number This ban!")
+                    print("Cannot able to find the phone number")
             except:
                 print("\nstoping process ...")
                 break
-        input("\nSMSbomber/Singel/# Back To Menu (PROCESS ENTER) ")
+        input("\nBack To Menu (Press Enter) ")
     
     elif num == "2":
         print("\n\n Please Enter Phone Number List!!!")
@@ -84,3 +84,13 @@ def start():
                             print("cannot able to find the {number}")
                 else:
                     break
+            except KeyboardInterrupt:
+                print("\nstopping process...")
+                input("Back To Menu (Pess Enter)")
+
+while True:
+    try:
+        start()
+    except KeyboardInterrupt:
+        print("Good Bye...")
+        break
