@@ -42,7 +42,7 @@ def start():
 
     if num == "1":
         print("\n\nPlease Enter Number:")
-        print("Example: +989931340980\n")
+        print("Example: +981234567890\n")
         
         cellphone = input("$ ")
         print("")
